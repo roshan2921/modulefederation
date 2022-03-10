@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
+    <a class="navbar-brand mx-2">Airport</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+            <button class="btn btn-info mx-2" [routerLink]="['/mfe1']">View Flights</button>
+          </li>
+        <li class="nav-item">
+          <button class="btn btn-warning mx-2" [routerLink]="['/mfe2']">Add Flights</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-success  mx-4 px-4" *ngIf="!isLoggedIn()" (click)="login()">Login</button>
+          <button class="btn btn-danger  mx-4 px-4" *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container-fluid my-4">
+    <router-outlet></router-outlet>
+  </div>
